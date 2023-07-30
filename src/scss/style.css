@@ -1,3 +1,35 @@
+.displayflex {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+}
+.displayflex div {
+  background-color: rgb(102, 72, 72);
+  height: 40vw;
+  width: 30vw;
+}
+.displayflex div ul > li {
+  list-style-type: none;
+  padding: 25px;
+}
+.displayflex div ul > li strong {
+  font-size: 100px;
+  padding: 20px;
+}
+.displayflex div ul > li a {
+  font-size: 100px;
+  border-radius: 20px;
+  background-color: #15ff00;
+  color: black;
+}
+.displayflex div img {
+  width: 25vw;
+  height: 26vw;
+}
+
 .loader {
   position: relative;
   width: 92px;

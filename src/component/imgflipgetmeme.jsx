@@ -32,14 +32,15 @@ function ImgFlipGetMeme() {
 
   return (
     <div className="displayflex">
-    <article>
       {imgFlipData.map((meme, index) => (
         <div key={index}>
-          <img src={meme.url} />
-
+          <ul>
+            <li><img src={meme.url} /></li>
+            <li><strong>{meme.name}</strong></li>
+            <li><a href={meme.url}>Image Source</a></li>
+          </ul>
         </div>
       ))}
-      </article>
     </div>
   );
 }
