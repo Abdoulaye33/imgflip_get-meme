@@ -1,54 +1,77 @@
 .loader {
-  width: 160px;
-  height: 185px;
   position: relative;
-  background: #fff;
-  border-radius: 100px 100px 0 0;
-}
-
-.loader:after {
-  content: "";
-  position: absolute;
-  width: 100px;
-  height: 125px;
-  left: 50%;
-  top: 25px;
-  transform: translateX(-50%);
-  background-image: radial-gradient(circle, #000 48%, transparent 55%), radial-gradient(circle, #000 48%, transparent 55%), radial-gradient(circle, #fff 30%, transparent 45%), radial-gradient(circle, #000 48%, transparent 51%), linear-gradient(#000 20px, transparent 0), linear-gradient(#cfecf9 60px, transparent 0), radial-gradient(circle, #cfecf9 50%, transparent 51%), radial-gradient(circle, #cfecf9 50%, transparent 51%);
+  width: 92px;
+  height: 180px;
+  border-radius: 8px;
+  transform: translateY(-30px);
+  background-color: #000;
+  background-image: radial-gradient(ellipse at center, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 4%, rgb(81, 81, 81) 14%, rgb(44, 44, 44) 26%, rgb(2, 2, 2) 53%, rgb(2, 2, 2) 65%, rgba(2, 2, 2, 0) 66%), linear-gradient(#111, #111);
   background-repeat: no-repeat;
-  background-size: 16px 16px, 16px 16px, 10px 10px, 42px 42px, 12px 3px, 50px 25px, 70px 70px, 70px 70px;
-  background-position: 25px 10px, 55px 10px, 36px 44px, 50% 30px, 50% 85px, 50% 50px, 50% 22px, 50% 45px;
-  animation: faceLift 3s linear infinite alternate;
+  background-size: 10px 10px, 84px 162px;
+  background-position: center 2px, 4px 8px;
+  animation: lightUp 6s linear infinite alternate;
 }
 
 .loader:before {
   content: "";
   position: absolute;
-  width: 140%;
-  height: 125px;
-  left: -20%;
-  top: 0;
-  background-image: radial-gradient(circle, #fff 48%, transparent 50%), radial-gradient(circle, #fff 48%, transparent 50%);
+  left: 50%;
+  top: 190px;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 75px;
+  background-image: linear-gradient(#fff, #fff), linear-gradient(#bbb, #bbb), linear-gradient(#fff, #fff);
   background-repeat: no-repeat;
-  background-size: 65px 65px;
-  background-position: 0px 12px, 145px 12px;
-  animation: earLift 3s linear infinite alternate;
+  background-position: center 4px, center top, center 5px;
+  background-size: 11px 11px, 7px 4px, 2px 100%;
+  animation: plugin 6s linear infinite alternate;
 }
 
-@keyframes faceLift {
-  0% {
-    transform: translateX(-60%);
+.loader:after {
+  content: "";
+  width: 30px;
+  height: 60px;
+  background-image: linear-gradient(#888, #888), linear-gradient(to right, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.5) 40%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.1) 100%), linear-gradient(#15ff00, #15ff00), linear-gradient(#888, #888);
+  background-size: 12px 4px, 30px 52px, 30px 0px, 30px 56px;
+  background-position: center 0, center 6px, center bottom, center 4px;
+  background-repeat: no-repeat;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  animation: charging 6s linear infinite alternate;
+}
+
+@keyframes charging {
+  0%, 25% {
+    opacity: 0;
+    background-size: 12px 4px, 30px 52px, 30px 0px, 30px 56px;
   }
-  100% {
-    transform: translateX(-30%);
+  26%, 75% {
+    opacity: 1;
+    background-size: 12px 4px, 30px 52px, 30px 0px, 30px 56px;
+  }
+  50%, 100% {
+    opacity: 1;
+    background-size: 12px 4px, 30px 52px, 30px 56px, 30px 56px;
   }
 }
-@keyframes earLift {
-  0% {
-    transform: translateX(10px);
+@keyframes lightUp {
+  0%, 25% {
+    background-image: radial-gradient(ellipse at center, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 4%, rgb(81, 81, 81) 14%, rgb(44, 44, 44) 26%, rgb(2, 2, 2) 53%, rgb(2, 2, 2) 65%, rgba(2, 2, 2, 0) 66%), linear-gradient(#111, #111);
   }
-  100% {
-    transform: translateX(0px);
+  26%, 100% {
+    background-image: radial-gradient(ellipse at center, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 4%, rgb(81, 81, 81) 14%, rgb(44, 44, 44) 26%, rgb(2, 2, 2) 53%, rgb(2, 2, 2) 65%, rgba(2, 2, 2, 0) 66%), linear-gradient(#DDD, #DDD);
+  }
+}
+@keyframes plugin {
+  0%, 25% {
+    top: 190px;
+    background-position: center 4px, center top, center 5px;
+  }
+  26%, 100% {
+    background-position: center 0, center top, center 5px;
+    top: 180px;
   }
 }
 
